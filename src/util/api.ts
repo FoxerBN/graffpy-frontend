@@ -5,10 +5,10 @@ const api = axios.create({
   timeout: 5000
 });
 
-//example for fetch placeholder data
-export async function getUsers(){
+
+export async function getRealTimeData(){
   try {
-    const response = await api.get('/users');
+    const response = await api.get('/api/process');
     return response.data;
   } catch (error) {
     console.error('Error fetching users:', error);

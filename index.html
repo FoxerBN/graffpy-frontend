@@ -4,15 +4,81 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>System Monitor</title>
   </head>
-  <body>
-    <h1>Graphs</h1><br>
-    <h2>Users:</h2>
-    <ul id="userList">
+  <body class="p-8">
+    <h1 class="text-3xl font-bold mb-8 text-center">System Monitor</h1>
+    
+    <!-- System Stats Container -->
+    <div class="container mx-auto max-w-4xl">
       
-    </ul>
-    <canvas id="tempChart" width="600" height="200"></canvas>
+      <!-- Top Row - 2 radial progress -->
+      <div class="grid grid-cols-2 gap-6 m-2 ">
+        <div class="card shadow-xl h-38 border-base-300 border shadow-xl p-6 text-center">
+          <div class="radial-progress text-primary mx-auto mb-2" style="--value:0;" id="cpu-progress" role="progressbar">0%</div>
+          <div class="progress-label text-sm font-semibold">CPU Usage</div>
+        </div>
+        
+        <div class="card shadow-xl h-38 border-base-300 border shadow-xl p-6 text-center">
+          <div class="radial-progress text-secondary mx-auto mb-2" style="--value:0;" id="ram-progress" role="progressbar">0%</div>
+          <div class="progress-label text-sm font-semibold">RAM Usage</div>
+        </div>
+      </div>
+      
+      <!-- Middle Row - 2 radial progress -->
+      <div class="grid grid-cols-2 gap-6 m-2">
+        <div class="card shadow-xl h-38 border-base-600 border shadow-xl p-6 text-center">
+          <div class="radial-progress text-accent mx-auto mb-2" style="--value:0;" id="disk-progress" role="progressbar">0%</div>
+          <div class="progress-label text-sm font-semibold">Disk Usage</div>
+        </div>
+        
+        <div class="card shadow-xl h-38 border-base-300 border shadow-xl p-6 text-center">
+          <div class="radial-progress text-warning mx-auto mb-2" style="--value:0;" id="temp-progress" role="progressbar">0%</div>
+          <div class="progress-label text-sm font-semibold">CPU Temperature</div>
+        </div>
+      </div>
+      
+      <!-- Bottom Row - Network Stats -->
+      <div class="grid grid-cols-1 gap-6 m-2">
+        <div class="stats border-base-300 border shadow-xl">
+          <div class="stat">
+            <div class="stat-figure text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4 4-4-4M12 2v8"></path>
+              </svg>
+            </div>
+            <div class="stat-title text-white">Download Speed</div>
+            <div class="stat-value text-primary" id="net-download">0 B/s</div>
+          </div>
+          
+          <div class="stat">
+            <div class="stat-figure text-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 11v-8a2 2 0 012-2h12a2 2 0 012 2v8M16 10l-4-4-4 4M12 14V6"></path>
+              </svg>
+            </div>
+            <div class="stat-title text-white">Upload Speed</div>
+            <div class="stat-value text-secondary" id="net-upload">0 B/s</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Charts Section -->
+      <div class="grid grid-cols-1 gap-6">
+        <div class="card shadow-xl p-6">
+          <h3 class="card-title mb-4">Temperature Chart</h3>
+          <canvas id="tempChart2" width="600" height="200"></canvas>
+        </div>
+        
+        <div class="card shadow-xl p-6">
+          <h3 class="card-title mb-4">Temperature Trend</h3>
+          <canvas id="tempChart" width="600" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+    
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
