@@ -1,5 +1,5 @@
 import { Chart } from 'chart.js/auto';
-import { getLast7Days } from '../util/dateUtil';
+import { getLast7Days } from '../../util/dateUtil';
 
 export async function renderTempChart(canvasId: string) {
   const labels = getLast7Days(); // vždy 7 dní
