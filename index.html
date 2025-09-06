@@ -24,7 +24,7 @@
                 >
                     <div
                         id="cpu-usage"
-                        class="radial-progress text-primary mx-auto mb-2"
+                        class="radial-progress text-info mx-auto mb-2"
                         style="--value: 0"
                         role="progressbar"
                     >
@@ -33,13 +33,14 @@
                     <div class="progress-label text-sm font-semibold">
                         CPU Usage
                     </div>
+                    <span id="cpu-danger-level" class="text-xs"></span>
                 </div>
 
                 <div
                     class="card shadow-xl border-base-300 border shadow-xl p-6 text-center"
                 >
                     <div
-                        class="radial-progress text-primary mx-auto mb-2"
+                        class="radial-progress text-info mx-auto mb-2"
                         style="--value: 0"
                         id="ram-progress"
                         role="progressbar"
@@ -61,7 +62,7 @@
                     class="card shadow-xl border-base-600 border shadow-xl p-6 text-center"
                 >
                     <div
-                        class="radial-progress text-primary mx-auto mb-2"
+                        class="radial-progress text-info mx-auto mb-2"
                         style="--value: 0"
                         id="disk-progress"
                         role="progressbar"
@@ -71,13 +72,14 @@
                     <div class="progress-label text-sm font-semibold">
                         Disk Usage
                     </div>
+                    <span class="text-xm text-gray-300 mt-1" id="disk-details">0/0 GB</span>
                 </div>
 
                 <div
                     class="card shadow-xl border-base-300 border shadow-xl p-6 text-center"
                 >
                     <div
-                        class="radial-progress text-primary mx-auto mb-2"
+                        class="radial-progress text-info mx-auto mb-2"
                         style="--value: 0"
                         id="temp-progress"
                         role="progressbar"
@@ -87,9 +89,10 @@
                     <div class="progress-label text-sm font-semibold">
                         CPU Temperature
                     </div>
+                    <span class="text-xs mt-1" id="dangerous-level"></span>
                 </div>
             </div>
-
+        
             <!-- Bottom Row - Network Stats -->
             <div class="grid grid-cols-1 gap-6 m-2">
                 <div class="stats border-base-300 border shadow-xl">
@@ -116,7 +119,7 @@
                     </div>
 
                     <div class="stat">
-                        <div class="stat-figure text-secondary">
+                        <div class="stat-figure text-secondary rotate-180">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -127,7 +130,7 @@
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                     stroke-width="2"
-                                    d="M4 11v-8a2 2 0 012-2h12a2 2 0 012 2v8M16 10l-4-4-4 4M12 14V6"
+                                    d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4 4-4-4M12 2v8"
                                 ></path>
                             </svg>
                         </div>

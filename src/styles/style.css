@@ -57,3 +57,16 @@ body {
 .card {
     border-radius: 1rem;
 }
+
+
+.temp-good {
+  color: #4caf50; /* Green */
+}
+
+.temp-warning {
+  color: #ff9800; /* Orange */
+}
+
+.temp-danger {
+  color: #ff4444; /* Red */
+}
