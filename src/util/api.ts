@@ -16,4 +16,14 @@ export async function getRealTimeData(){
   }
 }
 
+export async function getWeeklyData(){
+  try {
+    const response = await api.get('/api/weekly');
+    return response.data;
+  }catch (error) {
+    console.error('Error fetching weekly data:', error);
+    throw error;
+  }
+}
+
 export default api;
