@@ -1,5 +1,4 @@
 import { fetchSystemData } from "../../service/realTimeData";
-import { fetchSystemData as fetchWeeklySystemData } from "../../service/weeklyData";
 import { calculateDangerousLevel, calculateDangerousLevelOfCPU } from "../../util/dangerousLevel";
 
 // DOM element references
@@ -68,7 +67,6 @@ const renderSystemStats = async () => {
   }
 };
 renderSystemStats();
-fetchWeeklySystemData();
 // Fetch every 10 seconds
 const intervalId = setInterval(renderSystemStats, 10000);
 

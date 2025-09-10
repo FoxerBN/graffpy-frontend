@@ -1,9 +1,10 @@
 import './styles/font.css';
 import './styles/style.css';
-import { renderTempChart } from './render/charts/chartTemp';
+import { renderCpuPercentChart,renderCpuTempChart,renderRamPercentChart,renderDiskSpaceChart } from './render/charts/chartTemp';
 import './render/stats/systemRender';
 
-// Start rendering
-renderTempChart('tempChart');
-renderTempChart('tempChart2');
 
+renderCpuTempChart('cpu-temp-canvas');
+renderCpuPercentChart('cpu-percent-canvas'); 
+renderRamPercentChart('ram-percent-canvas');
+renderDiskSpaceChart('disk-space-canvas');

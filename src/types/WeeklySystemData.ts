@@ -1,4 +1,4 @@
-export interface WeeklySystemData {
+export interface WeeklyDayData {
     avgCpuPercent: string;
     avgCpuTemp: string;
     avgRamPercent: string;
@@ -8,4 +8,8 @@ export interface WeeklySystemData {
     minCpuPercent: string;
     minCpuTemp: string;
     minRamPercent: string;
+    freeSpace: string;
+    totalSpace: string;
 }
+
+export type WeeklySystemData = WeeklyDayData[];
